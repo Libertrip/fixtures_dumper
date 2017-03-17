@@ -1,4 +1,5 @@
 require 'active_record'
+require 'fileutils'
 
 module FixturesDumper
   class Dumper
@@ -74,6 +75,7 @@ module FixturesDumper
     end
 
     def dump_to(file, data)
+      FileUtils::mkdir_p File.dirname(file)
       File.open(file, "w") do |f|
         data.each do |hash|
           f.write(sanitize_yaml(hash.to_yaml))
