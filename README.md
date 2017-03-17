@@ -15,33 +15,30 @@ gem 'fixtures_dumper'
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install fixtures_dumper
-
+```
+bundle
+```
 ## Supported Rails Versions
 
-Rails 3.2.x and Rails 4.x
+Rails 3.2.x and higher
 
 ## Usage
 
 ``` ruby
 # Dump data in all the tables to fixtures
-rake db:fixtures:dump
+rake fd:fixtures:dump
 
-# Dump data from `foo` to its fixture file
-rake db:fixtures:dump TABLE=foo
+# Dump data from table `users` to its fixture file
+rake fd:fixtures:dump TABLE=users
 
 # Dump data from test database to fixtures
-rake db:fixtures:dump RAILS_ENV=test
+rake fd:fixtures:dump RAILS_ENV=test
 ```
 
 ## Example
 
 ```
-$ rake db:fixtures:dump TABLE=users
+$ rake fd:fixtures:dump TABLE=users
 $ cat users.yml
 user_1:
   id: 1
