@@ -89,7 +89,7 @@ module FixturesDumper
     end
 
     def fixtures_path
-      File.join Rails.root, 'test', 'fixtures'
+      File.join Rails.root, 'test', 'fixtures_dumper'
     end
 
     def connection
